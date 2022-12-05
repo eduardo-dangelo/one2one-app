@@ -12,7 +12,7 @@ class Project(models.Model):
 
 
 class One2One(models.Model):
-    title = models.CharField(max_length=120)
+    title = models.CharField(max_length=120) 
     created_at = models.DateTimeField('created at', default=timezone.now)
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
 

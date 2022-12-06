@@ -19,7 +19,7 @@ from rest_framework import routers
 from django.urls import path, include
 
 router = routers.DefaultRouter()
-router.register(r'projects', views.ProjectViewSet, 'project')
+router.register(r'workspaces', views.WorkspaceViewSet, 'workspace')
 router.register(r'one2ones', views.One2OneViewSet, 'one2one')
 router.register(r'okrs', views.OkrViewSet, 'okr')
 

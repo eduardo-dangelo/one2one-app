@@ -2,7 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 from django.contrib import admin
-from .models import Project, One2One, Okr
+from .models import Workspace, One2One, Okr
 
 class OkrInline(admin.TabularInline):
     model = Okr
@@ -15,7 +15,7 @@ class One2OneInline(admin.TabularInline):
     model = One2One
     extra = 0
 
-class ProjectAdmin(admin.ModelAdmin):
+class WorkspaceAdmin(admin.ModelAdmin):
     fieldsets = [
         (None, {'fields':  ['title', 'created_at']}),
     ]
@@ -23,10 +23,10 @@ class ProjectAdmin(admin.ModelAdmin):
 
 class One2OneAdmin(admin.ModelAdmin):
     fieldsets = [
-        (None, {'fields':  ['title', 'created_at', 'project']}),
+        (None, {'fields':  ['title', 'created_at', 'workspace']}),
     ]
     inlines = [OkrInline]
 
-admin.site.register(Project, ProjectAdmin)
+admin.site.register(Workspace, WorkspaceAdmin)
 admin.site.register(One2One, One2OneAdmin)
 # Register your models here.

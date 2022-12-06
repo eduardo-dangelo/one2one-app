@@ -3,7 +3,7 @@ from django.utils import timezone
 from django.core.validators import MaxValueValidator, MinValueValidator
 
 # Create your models here.
-class Project(models.Model):
+class Workspace(models.Model):
     title = models.CharField(max_length=120)
     created_at = models.DateTimeField('created at', default=timezone.now)
 
@@ -14,7 +14,7 @@ class Project(models.Model):
 class One2One(models.Model):
     title = models.CharField(max_length=120) 
     created_at = models.DateTimeField('created at', default=timezone.now)
-    project = models.ForeignKey(Project, on_delete=models.CASCADE)
+    workspace = models.ForeignKey(Workspace, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.title

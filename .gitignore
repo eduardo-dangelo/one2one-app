@@ -5,6 +5,7 @@
 /frontend/.pnp
 /frontend/.pnp.js
 
+.idea
 # testing
 /frontend/coverage
 
